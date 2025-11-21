@@ -28,14 +28,11 @@ Another valid value is "stopword" to remove all detected stopwords.}
 
 \item{corp.rm.tag}{A character vector with valid POS tags which should be removed.}
 
-\item{as.vector}{Logical. If \code{TRUE},
-      results will be returned as a character vector containing only the text parts
+\item{as.vector}{Logical. If \code{TRUE}, results will be returned as a character vector containing only the text parts
 which survived the filtering.}
 
-\item{update.desc}{Logical. If \code{TRUE},
-      the \code{desc} slot of the tagged object will be fully recalculated
-using the filtered text. If \code{FALSE},
-      the \code{desc} slot will be copied from the original object.
+\item{update.desc}{Logical. If \code{TRUE}, the \code{desc} slot of the tagged object will be fully recalculated
+using the filtered text. If \code{FALSE}, the \code{desc} slot will be copied from the original object.
 Finally, if \code{NULL}, the \code{desc} slot remains empty.}
 }
 \value{

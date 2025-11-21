@@ -7,14 +7,11 @@
 gutierrez(txt.file, ...)
 }
 \arguments{
-\item{txt.file}{Either an object of class \code{\link[koRpus:kRp.text-class]{kRp.text}},
-      a character vector which must be be
-a valid path to a file containing the text to be analyzed,
-      or a list of text features. If the latter, calculation
+\item{txt.file}{Either an object of class \code{\link[koRpus:kRp.text-class]{kRp.text}}, a character vector which must be be
+a valid path to a file containing the text to be analyzed, or a list of text features. If the latter, calculation
 is done by \code{\link[koRpus:readability.num]{readability.num}}.}
 
-\item{...}{Further valid options for the main function,
-      see \code{\link[koRpus:readability]{readability}} for details.}
+\item{...}{Further valid options for the main function, see \code{\link[koRpus:readability]{readability}} for details.}
 }
 \value{
 An object of class \code{\link[koRpus:kRp.readability-class]{kRp.readability}}.
@@ -23,10 +20,8 @@ An object of class \code{\link[koRpus:kRp.readability-class]{kRp.readability}}.
 This is just a convenient wrapper function for \code{\link[koRpus:readability]{readability}}.
 }
 \details{
-Calculates Gutiérrez de Polini's \emph{Fórmula de comprensibilidad} (Gutiérrez, 1972,
-      as cited in Fernández, 2016).
-In contrast to \code{\link[koRpus:readability]{readability}},
-      which by default calculates all possible indices,
+Calculates Gutiérrez de Polini's \emph{Fórmula de comprensibilidad} (Gutiérrez, 1972, as cited in Fernández, 2016).
+In contrast to \code{\link[koRpus:readability]{readability}}, which by default calculates all possible indices,
 this function will only calculate the index value.
 }
 \examples{
@@ -35,8 +30,7 @@ this function will only calculate the index value.
 }
 }
 \references{
-Fernández, A. M. (2016,
-      November 30). \emph{Fórmula de comprensibilidad de Gutiérrez de Polini}.
+Fernández, A. M. (2016, November 30). \emph{Fórmula de comprensibilidad de Gutiérrez de Polini}.
      \url{https://legible.es/blog/comprensibilidad-gutierrez-de-polini/}
 }
 \keyword{readability}

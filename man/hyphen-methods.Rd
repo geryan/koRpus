@@ -42,22 +42,17 @@
 \item{words}{Either an object of class \code{\link[koRpus:kRp.text-class]{kRp.text}},
 or a character vector with words to be hyphenated.}
 
-\item{hyph.pattern}{Either an object of class \code{\link[sylly:kRp.hyph.pat-class]{kRp.hyph.pat}},
-      or
+\item{hyph.pattern}{Either an object of class \code{\link[sylly:kRp.hyph.pat-class]{kRp.hyph.pat}}, or
 a valid character string naming the language of the patterns to be used. See details.}
 
-\item{min.length}{Integer,
-      number of letters a word must have for considering a hyphenation. \code{hyphen} will
-not split words after the first or before the last letter,
-      so values smaller than 4 are not useful.}
+\item{min.length}{Integer, number of letters a word must have for considering a hyphenation. \code{hyphen} will
+not split words after the first or before the last letter, so values smaller than 4 are not useful.}
 
-\item{rm.hyph}{Logical,
-      whether appearing hyphens in words should be removed before pattern matching.}
+\item{rm.hyph}{Logical, whether appearing hyphens in words should be removed before pattern matching.}
 
 \item{corp.rm.class}{A character vector with word classes which should be ignored. The default value
 \code{"nonpunct"} has special meaning and will cause the result of
-\code{kRp.POS.tags(lang, tags=c("punct","sentc"),
-      list.classes=TRUE)} to be used. Relevant only if \code{words}
+\code{kRp.POS.tags(lang, tags=c("punct","sentc"), list.classes=TRUE)} to be used. Relevant only if \code{words}
 is a valid koRpus object.}
 
 \item{corp.rm.tag}{A character vector with POS tags which should be ignored. Relevant only if \code{words}
@@ -65,32 +60,23 @@ is a valid koRpus object.}
 
 \item{quiet}{Logical. If \code{FALSE}, short status messages will be shown.}
 
-\item{cache}{Logical. \code{hyphen()} can cache results to speed up the process. If this option is set to \code{TRUE},
-      the
+\item{cache}{Logical. \code{hyphen()} can cache results to speed up the process. If this option is set to \code{TRUE}, the
 current cache will be queried and new tokens also be added. Caches are language-specific and reside in an environment,
-i.e., they are cleaned at the end of a session. If you want to save these for later use,
-      see the option \code{hyph.cache.file}
+i.e., they are cleaned at the end of a session. If you want to save these for later use, see the option \code{hyph.cache.file}
 in \code{\link[koRpus:set.kRp.env]{set.kRp.env}}.}
 
-\item{as}{A character string defining the class of the object to be returned. Defaults to \code{"kRp.hyphen"},
-      but can also be
-set to \code{"data.frame"} or \code{"numeric"},
-      returning only the central \code{data.frame} or the numeric vector of counted syllables,
-respectively. For the latter two options,
-      you can alternatively use the shortcut methods \code{hyphen_df} or  \code{hyphen_c}.
+\item{as}{A character string defining the class of the object to be returned. Defaults to \code{"kRp.hyphen"}, but can also be
+set to \code{"data.frame"} or \code{"numeric"}, returning only the central \code{data.frame} or the numeric vector of counted syllables,
+respectively. For the latter two options, you can alternatively use the shortcut methods \code{hyphen_df} or  \code{hyphen_c}.
 Ignored if \code{as.feature=TRUE}.}
 
-\item{as.feature}{Logical,
-      whether the output should be just the analysis results or the input object with
+\item{as.feature}{Logical, whether the output should be just the analysis results or the input object with
 the results added as a feature. Use \code{\link[koRpus:corpusHyphen]{corpusHyphen}} to get the results from such an aggregated object.
-If set to \code{TRUE}, \code{as="kRp.hyphen"} is automatically set,
-      overwriting other setting of \code{as} with a warning.}
+If set to \code{TRUE}, \code{as="kRp.hyphen"} is automatically set, overwriting other setting of \code{as} with a warning.}
 }
 \value{
-An object of class \code{\link[koRpus:kRp.text-class]{kRp.text}},
-      \code{\link[sylly:kRp.hyphen-class]{kRp.hyphen}},
-   \code{data.frame} or a numeric vector,
-      depending on the values of the \code{as} and \code{as.feature} arguments.
+An object of class \code{\link[koRpus:kRp.text-class]{kRp.text}}, \code{\link[sylly:kRp.hyphen-class]{kRp.hyphen}},
+   \code{data.frame} or a numeric vector, depending on the values of the \code{as} and \code{as.feature} arguments.
 }
 \description{
 These methods implement word hyphenation, based on Liang's algorithm.

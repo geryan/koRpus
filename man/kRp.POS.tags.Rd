@@ -14,11 +14,9 @@ kRp.POS.tags(
 \arguments{
 \item{lang}{A character string defining a language (see details for valid choices).}
 
-\item{list.classes}{Logical,
-      if \code{TRUE} only the known word classes for the chosen language will me returned.}
+\item{list.classes}{Logical, if \code{TRUE} only the known word classes for the chosen language will me returned.}
 
-\item{list.tags}{Logical,
-      if \code{TRUE} only the POS tags for the chosen language will me returned.}
+\item{list.tags}{Logical, if \code{TRUE} only the POS tags for the chosen language will me returned.}
 
 \item{tags}{A character vector with at least one of "words", "punct" or "sentc".}
 }
@@ -31,8 +29,7 @@ The matrix has three columns:
      \item{\code{desc}:}{"Human readable" description of what the tag stands for}
    }
 Otherwise a vector with the known word classes or POS tags for the chosen language (and probably tag subset) will be returned.
-If both \code{list.classes} and \code{list.tags} are \code{TRUE},
-      still only the POS tags will be returned.
+If both \code{list.classes} and \code{list.tags} are \code{TRUE}, still only the POS tags will be returned.
 }
 \description{
 This function can be used to get a set of part-of-speech (POS) tags for a given language. These tag sets should conform
@@ -41,21 +38,15 @@ with the ones used by TreeTagger.
 \details{
 Use \code{\link[koRpus:available.koRpus.lang]{available.koRpus.lang}} to get a list of all supported languages. Language
 support packages must be installed an loaded to be usable with \code{kRp.POS.tags}.
-For the internal tokenizer a small subset of tags is also defined,
-      available through \code{lang="kRp"}.
-Finally,
-      the Universal POS Tags[1] are automatically appended if no matching tag was already defined.
-If you don't know the language your text was written in,
-      the function \code{\link[koRpus:guess.lang]{guess.lang}}
+For the internal tokenizer a small subset of tags is also defined, available through \code{lang="kRp"}.
+Finally, the Universal POS Tags[1] are automatically appended if no matching tag was already defined.
+If you don't know the language your text was written in, the function \code{\link[koRpus:guess.lang]{guess.lang}}
 should be able to detect it.
 
-With the element \code{tags} you can specify if you want all tag definitions, or a subset,
-      e.g. tags only for punctuation and
-sentence endings (that is,
-      you need to call for both "punct" and "sentc" to get all punctuation tags).
+With the element \code{tags} you can specify if you want all tag definitions, or a subset, e.g. tags only for punctuation and
+sentence endings (that is, you need to call for both "punct" and "sentc" to get all punctuation tags).
 
-The function is not so much intended to be used directly,
-      but it is called by several other functions internally. However,
+The function is not so much intended to be used directly, but it is called by several other functions internally. However,
 it can still be useful to directly examine available POS tags.
 }
 \examples{

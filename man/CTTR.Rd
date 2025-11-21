@@ -9,11 +9,9 @@ CTTR(txt, char = FALSE, ...)
 \arguments{
 \item{txt}{An object of class \code{\link[koRpus:kRp.text-class]{kRp.text}} containing the tagged text to be analyzed.}
 
-\item{char}{Logical,
-      defining whether data for plotting characteristic curves should be calculated.}
+\item{char}{Logical, defining whether data for plotting characteristic curves should be calculated.}
 
-\item{...}{Further valid options for the main function,
-      see \code{\link[koRpus:lex.div]{lex.div}} for details.}
+\item{...}{Further valid options for the main function, see \code{\link[koRpus:lex.div]{lex.div}} for details.}
 }
 \value{
 An object of class \code{\link[koRpus:kRp.TTR-class]{kRp.TTR}}.
@@ -23,10 +21,8 @@ This is just a convenient wrapper function for \code{\link[koRpus:lex.div]{lex.d
 }
 \details{
 Calculates Carroll's corrected TTR (CTTR). In contrast to
-\code{\link[koRpus:lex.div]{lex.div}},
-      which by default calculates all possible measures and
-their progressing characteristics, this function will only calculate the CTTR value,
-      and characteristics are
+\code{\link[koRpus:lex.div]{lex.div}}, which by default calculates all possible measures and
+their progressing characteristics, this function will only calculate the CTTR value, and characteristics are
 off by default.
 }
 \examples{
@@ -36,7 +32,6 @@ CTTR(tagged.text)
 }
 \seealso{
 \code{\link[koRpus:kRp.POS.tags]{kRp.POS.tags}},
- \code{\link[koRpus:kRp.text-class]{kRp.text}},
-      \code{\link[koRpus:kRp.TTR-class]{kRp.TTR}}
+ \code{\link[koRpus:kRp.text-class]{kRp.text}}, \code{\link[koRpus:kRp.TTR-class]{kRp.TTR}}
 }
 \keyword{LD}

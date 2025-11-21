@@ -27,19 +27,19 @@ textTransform(txt, ...)
 \item{...}{Parameters passed to \code{\link[koRpus:query]{query}} to find matching tokens. Relevant only if \code{scheme="normalize"}.}
 
 \item{scheme}{One of the following character strings:
-\itemize{
-  \item {\code{"minor"}} {Start each word with a lowercase letter.}
-  \item {\code{"all.minor"}} {Forces all letters into lowercase.}
-  \item {\code{"major"}} {Start each word with a uppercase letter.}
-  \item {\code{"all.major"}} {Forces all letters into uppercase.}
-  \item {\code{"random"}} {Randomly start words with uppercase or lowercase letters.}
-  \item {\code{"de.norm"}} {German norm: All names, nouns and sentence beginnings start with an uppercase letter,
+\describe{
+  \item{\code{"minor"}}{Start each word with a lowercase letter.}
+  \item{\code{"all.minor"}}{Forces all letters into lowercase.}
+  \item{\code{"major"}}{Start each word with an uppercase letter.}
+  \item{\code{"all.major"}}{Forces all letters into uppercase.}
+  \item{\code{"random"}}{Randomly start words with uppercase or lowercase letters.}
+  \item{\code{"de.norm"}}{German norm: All names, nouns and sentence beginnings start with an uppercase letter,
      anything else with a lowercase letter.}
-  \item {\code{"de.inv"}} {Inversion of \code{"de.norm"}.}
-  \item {\code{"eu.norm"}} {Usual European cases: Only names and sentence beginnings start with an uppercase letter,
+  \item{\code{"de.inv"}}{Inversion of \code{"de.norm"}.}
+  \item{\code{"eu.norm"}}{Usual European cases: Only names and sentence beginnings start with an uppercase letter,
      anything else with a lowercase letter.}
-  \item {\code{"eu.inv"}} {Inversion of \code{"eu.norm"}.}
-  \item {\code{"normalize"}} {Replace all tokens matching \code{query} in column \code{var} according to \code{method} (see below).}
+  \item{\code{"eu.inv"}}{Inversion of \code{"eu.norm"}.}
+  \item{\code{"normalize"}}{Replace all tokens matching \code{query} in column \code{var} according to \code{method} (see below).}
  }}
 
 \item{p}{Numeric value between 0 and 1. Defines the probability for upper case letters (relevant only
@@ -54,11 +54,11 @@ Relevant only if \code{scheme="normalize"}.}
 See \code{\link[koRpus:query]{query}} for details. Relevant only if \code{scheme="normalize"}.}
 
 \item{method}{One of the following character strings:
-\itemize{
-  \item {\code{"shortest"}} {Replace all matches with the shortest value found.}
-  \item {\code{"longest"}} {Replace all matches with the longest value found.}
-  \item {\code{"replace"}} {Replace all matches with the token given via \code{replacement}.}
-  \item {\code{"function"}} {Replace all matches with the result of the function provided by \code{f} (see section Function for details).}
+\describe{
+  \item{\code{"shortest"}}{Replace all matches with the shortest value found.}
+  \item{\code{"longest"}}{Replace all matches with the longest value found.}
+  \item{\code{"replace"}}{Replace all matches with the token given via \code{replacement}.}
+  \item{\code{"function"}}{Replace all matches with the result of the function provided by \code{f} (see section Function for details).}
 }
 In case of \code{"shortest"} and \code{"longest"}, if multiple values of the same length are found, the (first) most prevalent one is being used.
 The actual replacement value is documented in the \code{diff} slot of the object, as a list called \code{transfmt.normalize}.
@@ -94,9 +94,9 @@ This method is mainly intended to produce text material for experiments.
 \section{Function}{
  You can dynamically calculate the replacement value for the \code{"normalize"} scheme by setting \code{method="function"} and
 providing a function object as \code{f}. The function you provide must support the following arguments:
-\itemize{
-  \item {\code{tokens}} {The original tokens slot of the \code{txt} object (see \code{\link[koRpus:taggedText]{taggedText}}).}
-  \item {\code{match}} {A logical vector, indicating for each row of \code{tokens} whether it's a query match or not.}
+\describe{
+  \item{\code{tokens}}{The original tokens slot of the \code{txt} object (see \code{\link[koRpus:taggedText]{taggedText}}).}
+  \item{\code{match}}{A logical vector, indicating for each row of \code{tokens} whether it's a query match or not.}
 }
 You can then use these arguments in your function body to calculate the replacement, e.g. \code{tokens[match,"token"]} to get all relevant tokens.
 The return value of the function will be used as the replacement for all matched tokens. You probably want to make sure it's a character vecor

@@ -18,8 +18,7 @@ jumbleWords(words, ...)
 
 \item{...}{Additional options, currently unused.}
 
-\item{min.length}{An integer value,
-      defining the minimum word length. Words with less characters
+\item{min.length}{An integer value, defining the minimum word length. Words with less characters
 will not be changed. Grapheme clusters are counted as one.}
 
 \item{intact}{A named vector with the two integer values named \code{start} and \code{stop}.
@@ -32,10 +31,8 @@ Depending on the class of \code{words}, either a character vector or an object o
 }
 \description{
 This method either takes a character vector or objects inheriting class \code{kRp.text}
-(i.e., text tokenized by \code{koRpus}),
-      and jumbles the words. This usually means that the
-first and last letter of each word is left intact,
-      while all characters inbetween are being
+(i.e., text tokenized by \code{koRpus}), and jumbles the words. This usually means that the
+first and last letter of each word is left intact, while all characters inbetween are being
 randomized.
 }
 \examples{

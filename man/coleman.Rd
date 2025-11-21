@@ -16,17 +16,13 @@ coleman(
 )
 }
 \arguments{
-\item{txt.file}{Either an object of class \code{\link[koRpus:kRp.text-class]{kRp.text}},
-      a character vector which must be be
-a valid path to a file containing the text to be analyzed,
-      or a list of text features. If the latter, calculation
+\item{txt.file}{Either an object of class \code{\link[koRpus:kRp.text-class]{kRp.text}}, a character vector which must be be
+a valid path to a file containing the text to be analyzed, or a list of text features. If the latter, calculation
 is done by \code{\link[koRpus:readability.num]{readability.num}}.}
 
-\item{hyphen}{An object of class kRp.hyphen. If \code{NULL},
-      the text will be hyphenated automatically.}
+\item{hyphen}{An object of class kRp.hyphen. If \code{NULL}, the text will be hyphenated automatically.}
 
-\item{parameters}{A numeric vector with named magic numbers,
-      defining the relevant parameters for all formulas of the index.}
+\item{parameters}{A numeric vector with named magic numbers, defining the relevant parameters for all formulas of the index.}
 
 \item{clz1}{A numeric vector with named magic numbers for the first formula.}
 
@@ -36,8 +32,7 @@ is done by \code{\link[koRpus:readability.num]{readability.num}}.}
 
 \item{clz4}{A numeric vector with named magic numbers for the fourth formula.}
 
-\item{...}{Further valid options for the main function,
-      see \code{\link[koRpus:readability]{readability}} for details.}
+\item{...}{Further valid options for the main function, see \code{\link[koRpus:readability]{readability}} for details.}
 }
 \value{
 An object of class \code{\link[koRpus:kRp.readability-class]{kRp.readability}}.

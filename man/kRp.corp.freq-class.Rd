@@ -39,8 +39,7 @@ empty for data from a Celex[2] DB.
 }
 The slot might have additional columns, depending on the input material.}
 
-\item{\code{desc}}{Descriptive information. It contains six numbers from the \code{meta} information,
-      for convenient accessibility:
+\item{\code{desc}}{Descriptive information. It contains six numbers from the \code{meta} information, for convenient accessibility:
 \describe{
   \item{\code{tokens}:}{Number of running word forms}
   \item{\code{types}:}{Number of distinct word forms}
@@ -59,8 +58,7 @@ The slot might have additional columns, depending on the input material.}
   \item{\code{sig}:}{Log-likelihood significance of the co-occurrende}
 }}
 
-\item{\code{cooccur}}{Similar to \code{bigrams},
-      but listing co-occurrences anywhere in one sentence:
+\item{\code{cooccur}}{Similar to \code{bigrams}, but listing co-occurrences anywhere in one sentence:
 \describe{
   \item{\code{token1}:}{The first token}
   \item{\code{token2}:}{The second token that appeared in the same sentence}
@@ -68,15 +66,13 @@ The slot might have additional columns, depending on the input material.}
   \item{\code{sig}:}{Log-likelihood significance of the co-occurrende}
 }}
 
-\item{\code{caseSens}}{A single logical value,
-      whether the frequency statistics were calculated case sensitive
+\item{\code{caseSens}}{A single logical value, whether the frequency statistics were calculated case sensitive
 or not.}
 }}
 
 \section{Contructor function}{
 
-Should you need to manually generate objects of this class (which should rarely be the case),
-      the contructor function 
+Should you need to manually generate objects of this class (which should rarely be the case), the contructor function 
 \code{kRp_corp_freq(...)} can be used instead of
 \code{new("kRp.corp.freq", ...)}.
 }

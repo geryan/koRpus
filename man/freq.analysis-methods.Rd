@@ -22,8 +22,7 @@ freq.analysis(txt.file, ...)
 
 \item{corp.freq}{An object of class \code{\link[koRpus:kRp.corp.freq-class]{kRp.corp.freq}}.}
 
-\item{desc.stat}{Logical,
-      whether an updated descriptive statistical analysis should be conducted.}
+\item{desc.stat}{Logical, whether an updated descriptive statistical analysis should be conducted.}
 
 \item{corp.rm.class}{A character vector with word classes which should be ignored for frequency analysis. The default value
 \code{"nonpunct"} has special meaning and will cause the result of
@@ -37,17 +36,14 @@ An updated object of class \code{\link[koRpus:kRp.text-class]{kRp.text}} with th
    Use \code{\link[koRpus:corpusFreq]{corpusFreq}} to get that slot.
 }
 \description{
-The function \code{freq.analysis} analyzes texts regarding frequencies of tokens,
-      word classes etc.
+The function \code{freq.analysis} analyzes texts regarding frequencies of tokens, word classes etc.
 }
 \details{
 It adds new columns with frequency information to the \code{tokens} data frame of the input data,
 describing how often the particular token is used in the additionally provided corpus frequency object.
 
-To get the results, you can use \code{taggedText} to get the \code{tokens} slot,
-      \code{describe} to get
-the raw descriptive statistics (only updated if \code{desc.stat=TRUE}),
-      and \code{corpusFreq} to get
+To get the results, you can use \code{taggedText} to get the \code{tokens} slot, \code{describe} to get
+the raw descriptive statistics (only updated if \code{desc.stat=TRUE}), and \code{corpusFreq} to get
 the data from the added \code{freq} feature.
 
 If \code{corp.freq} provides appropriate idf values for the types in \code{txt.file}, the
@@ -84,8 +80,7 @@ if(require("koRpus.lang.en", quietly = TRUE)){
 } else {}
 }
 \seealso{
-\code{\link[koRpus:get.kRp.env]{get.kRp.env}},
-      \code{\link[koRpus:kRp.text-class]{kRp.text}},
+\code{\link[koRpus:get.kRp.env]{get.kRp.env}}, \code{\link[koRpus:kRp.text-class]{kRp.text}},
    \code{\link[koRpus:kRp.corp.freq-class]{kRp.corp.freq}}
 }
 \keyword{misc}

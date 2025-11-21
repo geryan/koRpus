@@ -40,8 +40,7 @@ These functions will be removed soon and should no longer ne used.
 \section{Slots}{
 
 \describe{
-\item{\code{lang}}{A character string,
-      naming the language that is assumed for the tokenized text in this object.}
+\item{\code{lang}}{A character string, naming the language that is assumed for the tokenized text in this object.}
 
 \item{\code{desc}}{Descriptive statistics of the tagged text.}
 
@@ -63,21 +62,16 @@ This data.frame structure adheres to the "Text Interchange Formats" guidelines s
 
 \item{\code{freq.analysis}}{A list with information on the word frequencies of the analyzed text.}
 
-\item{\code{diff}}{A list with mostly atomic vectors,
-      describing the amount of diffences between both text variants (percentage):
+\item{\code{diff}}{A list with mostly atomic vectors, describing the amount of diffences between both text variants (percentage):
 \describe{
-  \item{\code{all.tokens}:}{Percentage of all tokens, including punctuation,
-      that were altered.}
+  \item{\code{all.tokens}:}{Percentage of all tokens, including punctuation, that were altered.}
   \item{\code{words}:}{Percentage of altered words only.}
-  \item{\code{all.chars}:}{Percentage of all characters, including punctuation,
-      that were altered.}
+  \item{\code{all.chars}:}{Percentage of all characters, including punctuation, that were altered.}
   \item{\code{letters}:}{Percentage of altered letters in words only.}
   \item{\code{transfmt}:}{Character vector documenting the transformation(s) done to the tokens.}
   \item{\code{transfmt.equal}:}{Data frame documenting which token was changed in which transformational step. Only available if more than one transformation was done.}
-  \item{\code{transfmt.normalize}:}{A list documenting steps of normalization that were done to the object,
-      one element per transformation.
-    Each entry holds the name of the method, the query parameters,
-      and the effective replacement value.}
+  \item{\code{transfmt.normalize}:}{A list documenting steps of normalization that were done to the object, one element per transformation.
+    Each entry holds the name of the method, the query parameters, and the effective replacement value.}
 }}
 
 \item{\code{lex.div}}{Information on lexical diversity}
@@ -97,8 +91,7 @@ It was replaced by \code{\link[koRpus:kRp.text-class]{kRp.text}}.
 
 \section{S4 Class \code{kRp.txt.trans}}{
 
-This was used for objects returned by \code{\link[koRpus:textTransform]{textTransform}},
-      \code{\link[koRpus:clozeDelete]{clozeDelete}},
+This was used for objects returned by \code{\link[koRpus:textTransform]{textTransform}}, \code{\link[koRpus:clozeDelete]{clozeDelete}},
 \code{\link[koRpus:cTest]{cTest}}, and \code{\link[koRpus:jumbleWords]{jumbleWords}}.
 It was replaced by \code{\link[koRpus:kRp.text-class]{kRp.text}}.
 }
@@ -106,8 +99,7 @@ It was replaced by \code{\link[koRpus:kRp.text-class]{kRp.text}}.
 \section{S4 Class \code{kRp.analysis}}{
 
 This was used for objects returned by \code{kRp.text.analysis}.
-The function is also deprecated,
-      functionality can be replicated by combining \code{treetag},\code{freq.analysis} and \code{lex.div}.
+The function is also deprecated, functionality can be replicated by combining \code{treetag},\code{freq.analysis} and \code{lex.div}.
 }
 
 \references{

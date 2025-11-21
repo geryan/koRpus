@@ -11,16 +11,12 @@ get.kRp.env(..., errorIfUnset = TRUE)
 \describe{
   \item{TT.cmd}{ Logical, whether the set tagger command should be returned.}
   \item{lang}{ Logical, whether the set language should be returned.}
-  \item{TT.options}{ Logical,
-      whether the set TT.options for \code{treetag} should be returned.}
-  \item{hyph.cache.file}{ Logical,
-      whether the set hyphenation cache file for \code{hyphen} should be returned.}
-  \item{add.desc}{ Logical,
-      whether tag descriptions should be added directly to tagged text objects.}
+  \item{TT.options}{ Logical, whether the set TT.options for \code{treetag} should be returned.}
+  \item{hyph.cache.file}{ Logical, whether the set hyphenation cache file for \code{hyphen} should be returned.}
+  \item{add.desc}{ Logical, whether tag descriptions should be added directly to tagged text objects.}
 }}
 
-\item{errorIfUnset}{Logical, if \code{TRUE} and the desired property is not set at all,
-      the function will fail with an error message.}
+\item{errorIfUnset}{Logical, if \code{TRUE} and the desired property is not set at all, the function will fail with an error message.}
 }
 \value{
 A character string or list, possibly including:
@@ -30,14 +26,12 @@ A character string or list, possibly including:
  \item{hyph.cache.file}{The specified hyphenation cache file for \code{hyphen}}
 }
 \description{
-The function \code{get.kRp.env} returns information on your session environment regarding the koRpus package,
-      e.g.
+The function \code{get.kRp.env} returns information on your session environment regarding the koRpus package, e.g.
 where your local TreeTagger installation resides, if it was set before using
 \code{\link[koRpus:set.kRp.env]{set.kRp.env}}.
 }
 \details{
-For the most part,
-      \code{get.kRp.env} is a convenient wrapper for \code{\link[base:getOption]{getOption}}.
+For the most part, \code{get.kRp.env} is a convenient wrapper for \code{\link[base:getOption]{getOption}}.
 }
 \examples{
 set.kRp.env(lang="en")

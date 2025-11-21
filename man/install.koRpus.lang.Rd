@@ -11,8 +11,7 @@ install.koRpus.lang(
 )
 }
 \arguments{
-\item{lang}{Character vector,
-      one or more valid language identifiers (like \code{en} for English or \code{de}
+\item{lang}{Character vector, one or more valid language identifiers (like \code{en} for English or \code{de}
 for German).}
 
 \item{repos}{The URL to additional repositories to query. You should probably leave this to the
@@ -22,12 +21,10 @@ value is temporarily appended to the repos currently returned by \code{getOption
 \item{...}{Additional options for \code{install.packages}.}
 }
 \value{
-Does not return any useful objects,
-      just calls \code{\link[utils:install.packages]{install.packages}}.
+Does not return any useful objects, just calls \code{\link[utils:install.packages]{install.packages}}.
 }
 \description{
-This is a wrapper for \code{\link[utils:install.packages]{install.packages}},
-      making it more
+This is a wrapper for \code{\link[utils:install.packages]{install.packages}}, making it more
 convenient to install additional language support packages for koRpus.
 }
 \details{
@@ -43,6 +40,5 @@ library("koRpus.lang.de")
 }
 }
 \seealso{
-\code{\link[utils:install.packages]{install.packages}},
-      \code{\link[koRpus:available.koRpus.lang]{available.koRpus.lang}}
+\code{\link[utils:install.packages]{install.packages}}, \code{\link[koRpus:available.koRpus.lang]{available.koRpus.lang}}
 }

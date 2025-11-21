@@ -48,16 +48,12 @@ An object of the same class as \code{obj}.
 The method \code{correct.tag} can be used to alter objects of class \code{\link[koRpus:kRp.text-class]{kRp.text}}.
 }
 \details{
-Although automatic POS tagging and lemmatization are remarkably accurate,
-      the algorithms do ususally produce
-some errors. If you want to correct for these flaws, this method can be of help,
-      because it might prevent you from
-introducing new errors. That is,
-      it will do some sanitiy checks before the object is actually manipulated and returned.
+Although automatic POS tagging and lemmatization are remarkably accurate, the algorithms do ususally produce
+some errors. If you want to correct for these flaws, this method can be of help, because it might prevent you from
+introducing new errors. That is, it will do some sanitiy checks before the object is actually manipulated and returned.
 
 \code{correct.tag} will read the \code{lang} slot from the given object and check whether the \code{tag}
-provided is actually valid. If so,
-      it will not only change the \code{tag} field in the object, but also update
+provided is actually valid. If so, it will not only change the \code{tag} field in the object, but also update
 \code{wclass} and \code{desc} accordingly.
 
 If \code{check.token} is set it must also match \code{token} in the given row(s). Note that no check is done on the lemmata.

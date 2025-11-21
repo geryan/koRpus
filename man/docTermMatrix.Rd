@@ -10,21 +10,18 @@
 \usage{
 docTermMatrix(obj, terms = "token", case.sens = FALSE, tfidf = FALSE, ...)
 
-\S4method{docTermMatrix}{data.frame}(obj, terms = "token", case.sens = FALSE,
-      tfidf = FALSE)
+\S4method{docTermMatrix}{data.frame}(obj, terms = "token", case.sens = FALSE, tfidf = FALSE)
 
 \S4method{docTermMatrix}{kRp.text}(obj, terms = "token", case.sens = FALSE, tfidf = FALSE)
 }
 \arguments{
-\item{obj}{Either an object of class \code{\link[koRpus:kRp.text-class]{kRp.text}},
-      or a TIF[1] compliant token data frame.}
+\item{obj}{Either an object of class \code{\link[koRpus:kRp.text-class]{kRp.text}}, or a TIF[1] compliant token data frame.}
 
 \item{terms}{A character string defining the \code{tokens} column to be used for calculating the matrix.}
 
 \item{case.sens}{Logical, whether terms should be counted case sensitive.}
 
-\item{tfidf}{Logical,
-      if \code{TRUE} calculates term frequency--inverse document frequency (tf-idf)
+\item{tfidf}{Logical, if \code{TRUE} calculates term frequency--inverse document frequency (tf-idf)
 values instead of absolute frequency.}
 
 \item{...}{Additional arguments depending on the particular method.}
