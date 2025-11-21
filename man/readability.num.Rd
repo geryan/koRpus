@@ -10,33 +10,26 @@ readability.num(
     prepositions = NULL, conjunctions = NULL, pronouns = NULL, foreign = NULL, TTR =
     NULL, FOG.hard.words = NULL, Bormuth.NOL = NULL, Dale.Chall.NOL = NULL,
     Harris.Jacobson.NOL = NULL, Spache.NOL = NULL, lang = character()),
-  index = c("ARI", "Bormuth", "Coleman", "Coleman.Liau", "Dale.Chall",
-    "Danielson.Bryan", "Dickes.Steiwer", "DRP", "ELF", "Farr.Jenkins.Paterson", "Flesch",
-    "Flesch.Kincaid", "FOG", "FORCAST", "Fucks", "Harris.Jacobson", "Linsear.Write",
-    "LIX", "nWS", "RIX", "SMOG", "Spache", "Strain", "Traenkle.Bailer", "TRI", "Tuldava",
-    "Wheeler.Smith"),
+  index = c("ARI", "Bormuth", "Coleman", "Coleman.Liau", "Dale.Chall", "Danielson.Bryan",
+    "Dickes.Steiwer", "DRP", "ELF", "Farr.Jenkins.Paterson", "Flesch", "Flesch.Kincaid",
+    "FOG", "FORCAST", "Fucks", "Harris.Jacobson", "Linsear.Write", "LIX", "nWS", "RIX",
+    "SMOG", "Spache", "Strain", "Traenkle.Bailer", "TRI", "Tuldava", "Wheeler.Smith"),
   parameters = list()
 )
 }
 \arguments{
-\item{txt.features}{A named list with statistical information on the text,
-      or an object of class \code{kRp.readability}
+\item{txt.features}{A named list with statistical information on the text, or an object of class \code{kRp.readability}
 (only its \code{desc} slot will then be used). Valid values are:
 \describe{
   \item{\code{sentences}:}{The number of sentences.}
   \item{\code{words}:}{The number of words.}
   \item{\code{letters}:}{A named vector providing the number of letters. Must contain a value called \code{"all"},
-    the total number of letters, and several values called \code{"l<digit>"},
-      giving the number of words
-    with \code{<digit>} letters. To calculate all implemented measures with default parameters,
-      you need
+    the total number of letters, and several values called \code{"l<digit>"}, giving the number of words
+    with \code{<digit>} letters. To calculate all implemented measures with default parameters, you need
     at least the values \code{"l5"} (words with five \emph{or less} letters) and \code{"l6"} (words with six letters).}
-  \item{\code{syllables}:}{Similar to \code{letters},
-      but providing the number of syllables.  Must contain a value called \code{"all"},
-    the total number of syllables, and several values called \code{"s<digit>"},
-      giving the number of words
-    with \code{<digit>} syllables. To calculate all implemented measures with default parameters,
-      you need
+  \item{\code{syllables}:}{Similar to \code{letters}, but providing the number of syllables.  Must contain a value called \code{"all"},
+    the total number of syllables, and several values called \code{"s<digit>"}, giving the number of words
+    with \code{<digit>} syllables. To calculate all implemented measures with default parameters, you need
     at least the values \code{"s1"} and \code{"s2"}.
     Only needed to calculate measures which need syllable count (see \code{\link[koRpus:readability]{readability}}).}
   \item{\code{punct}:}{The number of punctuation characters. Only needed to calculate \code{"TRI"}.}
@@ -46,8 +39,7 @@ readability.num(
   \item{\code{pronouns}:}{The number of pronouns. Only needed to calculate \code{"Coleman"}.}
   \item{\code{foreign}:}{The number of foreign words. Only needed to calculate \code{"TRI"}.}
   \item{\code{TTR}:}{The type-token ratio. Only needed to calculate \code{"Dickes.Steiwer"}.}
-  \item{\code{FOG.hard.words}:}{The number of hard words,
-      counted according to FOG. Only needed to calculate \code{"FOG"}.}
+  \item{\code{FOG.hard.words}:}{The number of hard words, counted according to FOG. Only needed to calculate \code{"FOG"}.}
   \item{\code{Bormuth.NOL}:}{Number of words not on the Bormuth word list. Only needed to calculate \code{"Bormuth"}.}
   \item{\code{Dale.Chall.NOL}:}{Number of words not on the Dale-Chall word list. Only needed to calculate \code{"Dale.Chall"}.}
   \item{\code{Harris.Jacobson.NOL}:}{Number of words not on the Harris-Jacobson word list. Only needed to calculate \code{"Harris.Jacobson"}.}
@@ -57,8 +49,7 @@ readability.num(
 
 \item{index}{A character vector, indicating which indices should actually be computed.}
 
-\item{parameters}{A named list with magic numbers,
-      defining the relevant parameters for each index. If none are given,
+\item{parameters}{A named list with magic numbers, defining the relevant parameters for each index. If none are given,
 the default values are used.}
 }
 \description{

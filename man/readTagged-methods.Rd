@@ -68,10 +68,8 @@ readTagged(file, ...)
 )
 }
 \arguments{
-\item{file}{Either a matrix, a connection or a character vector. If the latter,
-      that must be a valid path to a file,
-containing the previously analyzed text. If it is a matrix,
-      it must contain three columns named "token", "tag", and "lemma",
+\item{file}{Either a matrix, a connection or a character vector. If the latter, that must be a valid path to a file,
+containing the previously analyzed text. If it is a matrix, it must contain three columns named "token", "tag", and "lemma",
 and except for these three columns all others are ignored.}
 
 \item{...}{Additional options, currently unused.}
@@ -80,55 +78,43 @@ and except for these three columns all others are ignored.}
 for all supported languages.
 If set to \code{"kRp.env"} this is got from \code{\link[koRpus:get.kRp.env]{get.kRp.env}}.}
 
-\item{tagger}{The software which was used to tokenize and tag the text. Currently,
-      "TreeTagger" and "manual" are the only
-supported values. If "manual",
-      you must also adjust the values of \code{mtx_cols} to define the columns to be imported.}
+\item{tagger}{The software which was used to tokenize and tag the text. Currently, "TreeTagger" and "manual" are the only
+supported values. If "manual", you must also adjust the values of \code{mtx_cols} to define the columns to be imported.}
 
-\item{apply.sentc.end}{Logical,
-      whethter the tokens defined in \code{sentc.end} should be searched and set to a sentence ending tag.
+\item{apply.sentc.end}{Logical, whethter the tokens defined in \code{sentc.end} should be searched and set to a sentence ending tag.
 You could call this a compatibility mode to make sure you get the results you would get if you called
 \code{\link[koRpus:treetag]{treetag}} on the original file.
 If set to \code{FALSE}, the tags will be imported as they are.}
 
-\item{sentc.end}{A character vector with tokens indicating a sentence ending. This adds to given results,
-      it doesn't replace them.}
+\item{sentc.end}{A character vector with tokens indicating a sentence ending. This adds to given results, it doesn't replace them.}
 
 \item{stopwords}{A character vector to be used for stopword detection. Comparison is done in lower case. You can also simply set 
 \code{stopwords=tm::stopwords("en")} to use the english stopwords provided by the \code{tm} package.}
 
-\item{stemmer}{A function or method to perform stemming. For instance,
-      you can set \code{stemmer=Snowball::SnowballStemmer} if you
-have the \code{Snowball} package installed (or \code{SnowballC::wordStem}). As of now,
-      you cannot provide further arguments to
+\item{stemmer}{A function or method to perform stemming. For instance, you can set \code{stemmer=Snowball::SnowballStemmer} if you
+have the \code{Snowball} package installed (or \code{SnowballC::wordStem}). As of now, you cannot provide further arguments to
 this function.}
 
 \item{rm.sgml}{Logical, whether SGML tags should be ignored and removed from output.}
 
-\item{doc_id}{Character string,
-      optional identifier of the particular document. Will be added to the \code{desc} slot.}
+\item{doc_id}{Character string, optional identifier of the particular document. Will be added to the \code{desc} slot.}
 
-\item{add.desc}{Logical. If \code{TRUE},
-      the tag description (column \code{"desc"} of the data.frame) will be added directly
+\item{add.desc}{Logical. If \code{TRUE}, the tag description (column \code{"desc"} of the data.frame) will be added directly
 to the resulting object. If set to \code{"kRp.env"} this is fetched from \code{\link[koRpus:get.kRp.env]{get.kRp.env}}. Only needed if \code{tag=TRUE}.}
 
-\item{mtx_cols}{Character vector with exactly three elements named "token", "tag",
-      and "lemma",
+\item{mtx_cols}{Character vector with exactly three elements named "token", "tag", and "lemma",
 the values of which must match the respective column names of the matrix provided via \code{file}.
 It is possible to set \code{lemma=NA} if the tagged results only provide token and tag.
 This argument is ignored unless \code{tagger="manual"} and data is provided as either a matrix or data frame.}
 
-\item{encoding}{A character string defining the character encoding of the input file,
-      like  \code{"Latin1"} or \code{"UTF-8"}.}
+\item{encoding}{A character string defining the character encoding of the input file, like  \code{"Latin1"} or \code{"UTF-8"}.}
 }
 \value{
-An object of class \code{\link[koRpus:kRp.text-class]{kRp.text}}. If \code{debug=TRUE},
-      prints internal variable settings and
+An object of class \code{\link[koRpus:kRp.text-class]{kRp.text}}. If \code{debug=TRUE}, prints internal variable settings and
    attempts to return the original output if the TreeTagger system call in a matrix.
 }
 \description{
-This method can be used on text files or matrices containing already tagged text material,
-      e.g. the results of
+This method can be used on text files or matrices containing already tagged text material, e.g. the results of
 TreeTagger[1].
 }
 \details{
@@ -159,8 +145,7 @@ It will also get stored in the resulting object and might be used by other funct
 }
 \references{
 Schmid, H. (1994). Probabilistic part-of-speec tagging using decision trees. In
-   \emph{International Conference on New Methods in Language Processing}, Manchester, UK,
-      44--49.
+   \emph{International Conference on New Methods in Language Processing}, Manchester, UK, 44--49.
 
 [1] \url{https://www.cis.uni-muenchen.de/~schmid/tools/TreeTagger/}
 }

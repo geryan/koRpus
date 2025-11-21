@@ -15,17 +15,14 @@ read.corp.celex(
 \arguments{
 \item{celex.path}{A character string, path to a frequency file in Celex format to read.}
 
-\item{running.words}{An integer value,
-      number of running words in the Celex data corpus to be read.}
+\item{running.words}{An integer value, number of running words in the Celex data corpus to be read.}
 
 \item{fileEncoding}{A character string naming the encoding of the Celex files.}
 
 \item{n}{An integer value defining how many lines of data should be read if \code{format="flatfile"}. Reads all at -1.}
 
-\item{caseSens}{Logical,
-      if \code{FALSE} forces all frequency statistics to be calculated regardless of the tokens' case.
-Otherwise, if the imported database supports it,
-      you will get different frequencies for the same tokens in different
+\item{caseSens}{Logical, if \code{FALSE} forces all frequency statistics to be calculated regardless of the tokens' case.
+Otherwise, if the imported database supports it, you will get different frequencies for the same tokens in different
 cases (e.\,g., "one" and "One").}
 }
 \value{

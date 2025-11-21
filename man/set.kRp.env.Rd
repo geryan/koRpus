@@ -9,30 +9,24 @@ set.kRp.env(..., validate = TRUE)
 \arguments{
 \item{...}{Named parameters to set in the koRpus environment. Valid arguments are:
 \describe{
-  \item{TT.cmd}{ A character string pointing to the tagger command you want to use for basic text analysis,
-      or \code{"manual"} if
+  \item{TT.cmd}{ A character string pointing to the tagger command you want to use for basic text analysis, or \code{"manual"} if
      you want to set \code{TT.options} as well. Set to \code{"tokenize"} to use \code{\link[koRpus:tokenize]{tokenize}}.}
   \item{lang}{ A character string specifying a valid language.}
   \item{TT.options}{ A list with arguments to be used as \code{TT.options} by \code{\link[koRpus:treetag]{treetag}}.}
-  \item{hyph.cache.file}{ A character string specifying a path to a file to use for storing already hyphenated data,
-      used by
+  \item{hyph.cache.file}{ A character string specifying a path to a file to use for storing already hyphenated data, used by
      \code{\link[koRpus]{hyphen}}.}
-  \item{add.desc}{ A logical value,
-      whether tag descriptions should be added directly to tagged text objects.}
+  \item{add.desc}{ A logical value, whether tag descriptions should be added directly to tagged text objects.}
 }
-To explicitly unset a value again, set it to an empty character string (e.g.,
-      \code{lang=""}).}
+To explicitly unset a value again, set it to an empty character string (e.g., \code{lang=""}).}
 
-\item{validate}{Logical,
-      if \code{TRUE} given paths will be checked for actual availablity, and the function will fail if files can't be found.}
+\item{validate}{Logical, if \code{TRUE} given paths will be checked for actual availablity, and the function will fail if files can't be found.}
 }
 \value{
 Returns an invisible \code{NULL}.
 }
 \description{
 The function \code{set.kRp.env} can be called before any of the analysing functions. It writes information
-on your session environment regarding the koRpus package,
-      e.g. path to a local TreeTagger installation,
+on your session environment regarding the koRpus package, e.g. path to a local TreeTagger installation,
 to your global \code{\link[base:.Options]{.Options}}.
 }
 \details{

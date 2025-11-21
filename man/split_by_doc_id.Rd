@@ -15,8 +15,7 @@ split_by_doc_id(obj, keepFeatures = TRUE)
 \arguments{
 \item{obj}{An object of class \code{\link[koRpus:kRp.text-class]{kRp.text}}.}
 
-\item{keepFeatures}{Either logical, whether to keep all features or drop them,
-      or a character vector
+\item{keepFeatures}{Either logical, whether to keep all features or drop them, or a character vector
 of names of features to keep if present.}
 }
 \value{

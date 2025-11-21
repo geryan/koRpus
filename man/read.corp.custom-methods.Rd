@@ -18,8 +18,7 @@ read.corp.custom(corpus, caseSens = TRUE, log.base = 10, ...)
 \arguments{
 \item{corpus}{An object of class \code{kRp.text} (then the column \code{"token"} of the \code{tokens} slot is used).}
 
-\item{caseSens}{Logical. If \code{FALSE},
-      all tokens will be matched in their lower case form.}
+\item{caseSens}{Logical. If \code{FALSE}, all tokens will be matched in their lower case form.}
 
 \item{log.base}{A numeric value defining the base of the logarithm used for inverse document frequency (idf). See
 \code{\link[base:log]{log}} for details.}
@@ -30,28 +29,23 @@ read.corp.custom(corpus, caseSens = TRUE, log.base = 10, ...)
 This argument merely exists for cases where you want to re-use an already existing matrix.
 By default, it is being created from the \code{corpus} object.}
 
-\item{as.feature}{Logical,
-      whether the output should be just the analysis results or the input object with
+\item{as.feature}{Logical, whether the output should be just the analysis results or the input object with
 the results added as a feature. Use \code{\link[koRpus:corpusCorpFreq]{corpusCorpFreq}}
 to get the results from such an aggregated object.}
 }
 \value{
 An object of class \code{\link[koRpus:kRp.corp.freq-class]{kRp.corp.freq}}.
 
-Depending on \code{as.feature},
-      either an object of class \code{\link[koRpus:kRp.corp.freq-class]{kRp.corp.freq}},
+Depending on \code{as.feature}, either an object of class \code{\link[koRpus:kRp.corp.freq-class]{kRp.corp.freq}},
    or an object of class \code{\link[koRpus:kRp.text-class]{kRp.text}} with the added feature \code{corp_freq} containing it.
 }
 \description{
 Read data from a custom corpus into a valid object of class \code{\link[koRpus:kRp.corp.freq-class]{kRp.corp.freq}}.
 }
 \details{
-The methods should enable you to perform a basic text corpus frequency analysis. That is,
-      not just to
-import analysis results like LCC files,
-      but to import the corpus material itself. The resulting object
-is of class \code{\link[koRpus:kRp.corp.freq-class]{kRp.corp.freq}},
-      so it can be used for frequency analysis by
+The methods should enable you to perform a basic text corpus frequency analysis. That is, not just to
+import analysis results like LCC files, but to import the corpus material itself. The resulting object
+is of class \code{\link[koRpus:kRp.corp.freq-class]{kRp.corp.freq}}, so it can be used for frequency analysis by
 other functions and methods of this package.
 }
 \examples{

@@ -63,17 +63,13 @@ treetag(
 )
 }
 \arguments{
-\item{file}{Either a connection or a character vector, valid path to a file,
-      containing the text to be analyzed.
-If \code{file} is a connection, its contents will be written to a temporary file,
-      since TreeTagger can't read from
+\item{file}{Either a connection or a character vector, valid path to a file, containing the text to be analyzed.
+If \code{file} is a connection, its contents will be written to a temporary file, since TreeTagger can't read from
 R connection objects.}
 
 \item{treetagger}{A character vector giving the TreeTagger script to be called. If set to \code{"kRp.env"} this is got from \code{\link[koRpus:get.kRp.env]{get.kRp.env}}.
-Only if set to \code{"manual"},
-      it is assumend not to be a wrapper script that can work the given text file, but that you would like
-to manually tweak options for tokenizing and POS tagging yourself. In that case,
-      you need to provide a full set of options with the \code{TT.options}
+Only if set to \code{"manual"}, it is assumend not to be a wrapper script that can work the given text file, but that you would like
+to manually tweak options for tokenizing and POS tagging yourself. In that case, you need to provide a full set of options with the \code{TT.options}
 parameter.}
 
 \item{rm.sgml}{Logical, whether SGML tags should be ignored and removed from output}
@@ -82,54 +78,35 @@ parameter.}
 \code{\link[koRpus:available.koRpus.lang]{available.koRpus.lang}}for all supported languages. If set to \code{"kRp.env"} this is
 fetched from \code{\link[koRpus:get.kRp.env]{get.kRp.env}}.}
 
-\item{apply.sentc.end}{Logical,
-      whethter the tokens defined in \code{sentc.end} should be searched and set to a sentence ending tag.}
+\item{apply.sentc.end}{Logical, whethter the tokens defined in \code{sentc.end} should be searched and set to a sentence ending tag.}
 
-\item{sentc.end}{A character vector with tokens indicating a sentence ending. This adds to TreeTaggers results,
-      it doesn't really replace them.}
+\item{sentc.end}{A character vector with tokens indicating a sentence ending. This adds to TreeTaggers results, it doesn't really replace them.}
 
-\item{encoding}{A character string defining the character encoding of the input file,
-      like  \code{"Latin1"} or \code{"UTF-8"}. If \code{NULL},
-the encoding will either be taken from a preset (if defined in \code{TT.options}),
-      or fall back to \code{""}. Hence you can overwrite the preset encoding with this parameter.}
+\item{encoding}{A character string defining the character encoding of the input file, like  \code{"Latin1"} or \code{"UTF-8"}. If \code{NULL},
+the encoding will either be taken from a preset (if defined in \code{TT.options}), or fall back to \code{""}. Hence you can overwrite the preset encoding with this parameter.}
 
 \item{TT.options}{A list of options to configure how TreeTagger is called. You have two basic choices: Either you choose one of the pre-defined presets
    or you give a full set of valid options:
    \itemize{
-     \item {\code{path}} {Mandatory: The absolute path to the TreeTagger root directory. That is where its subfolders \code{bin},
-      \code{cmd} and \code{lib} are located.}
-     \item {\code{preset}} {Optional: If you choose one of the pre-defined presets of one of the available language packages (like \code{"de"} for German,
-      see
+     \item {\code{path}} {Mandatory: The absolute path to the TreeTagger root directory. That is where its subfolders \code{bin}, \code{cmd} and \code{lib} are located.}
+     \item {\code{preset}} {Optional: If you choose one of the pre-defined presets of one of the available language packages (like \code{"de"} for German, see
        \code{\link[koRpus:available.koRpus.lang]{available.koRpus.lang}} for details),
-       you can omit all the following elements,
-      because they will be filled with defaults. Of course this only makes sense if you have a
-       working default installation. Note that since koRpus 0.07-1,
-      UTF-8 is the global default encoding.}
-     \item {\code{tokenizer}} {Mandatory: A character string,
-      naming the tokenizer to be called. Interpreted relative to \code{path/cmd/}.}
+       you can omit all the following elements, because they will be filled with defaults. Of course this only makes sense if you have a
+       working default installation. Note that since koRpus 0.07-1, UTF-8 is the global default encoding.}
+     \item {\code{tokenizer}} {Mandatory: A character string, naming the tokenizer to be called. Interpreted relative to \code{path/cmd/}.}
      \item {\code{tknz.opts}} {Optional: A character string with the options to hand over to the tokenizer. You don't need to specify "-a"
-       if \code{abbrev} is given. If \code{TT.tknz=FALSE},
-      you can pass configurational options to \code{\link[koRpus:tokenize]{tokenize}}
+       if \code{abbrev} is given. If \code{TT.tknz=FALSE}, you can pass configurational options to \code{\link[koRpus:tokenize]{tokenize}}
        by provinding them as a named list (instead of a character string) here.}
-     \item {\code{pre.tagger}} {Optional: A character string with code to be run before the tagger. This code is used as-is,
-      so you need
+     \item {\code{pre.tagger}} {Optional: A character string with code to be run before the tagger. This code is used as-is, so you need
        make sure it includes the needed pipe symbols.}
-     \item {\code{tagger}} {Mandatory: A character string,
-      naming the tagger-command to be called. Interpreted relative to \code{path/bin/}.}
-     \item {\code{abbrev}} {Optional: A character string,
-      naming the abbreviation list to be used. Interpreted relative to \code{path/lib/}.}
-     \item {\code{params}} {Mandatory: A character string,
-      naming the parameter file to be used. Interpreted relative to \code{path/lib/}.}
-     \item {\code{lexicon}} {Optional: A character string,
-      naming the lexicon file to be used. Interpreted relative to \code{path/lib/}.}
-     \item {\code{lookup}} {Optional: A character string,
-      naming the lexicon lookup command. Interpreted relative to \code{path/cmd/}.}
-     \item {\code{filter}} {Optional: A character string,
-      naming the output filter to be used. Interpreted relative to \code{path/cmd/}.}
-     \item {\code{no.unknown}} {Optional: Logical,
-      can be used to toggle the \code{"-no-unknown"} option of TreeTagger (defaults to \code{FALSE}).}
-     \item {\code{splitter}} {Optional: A character string,
-      naming the splitter to be called (before the tokenizer). Interpreted relative to \code{path/cmd/}.}
+     \item {\code{tagger}} {Mandatory: A character string, naming the tagger-command to be called. Interpreted relative to \code{path/bin/}.}
+     \item {\code{abbrev}} {Optional: A character string, naming the abbreviation list to be used. Interpreted relative to \code{path/lib/}.}
+     \item {\code{params}} {Mandatory: A character string, naming the parameter file to be used. Interpreted relative to \code{path/lib/}.}
+     \item {\code{lexicon}} {Optional: A character string, naming the lexicon file to be used. Interpreted relative to \code{path/lib/}.}
+     \item {\code{lookup}} {Optional: A character string, naming the lexicon lookup command. Interpreted relative to \code{path/cmd/}.}
+     \item {\code{filter}} {Optional: A character string, naming the output filter to be used. Interpreted relative to \code{path/cmd/}.}
+     \item {\code{no.unknown}} {Optional: Logical, can be used to toggle the \code{"-no-unknown"} option of TreeTagger (defaults to \code{FALSE}).}
+     \item {\code{splitter}} {Optional: A character string, naming the splitter to be called (before the tokenizer). Interpreted relative to \code{path/cmd/}.}
      \item {\code{splitter.opts}} {Optional: A character string with the options to hand over to the splitter.}
    }
 You can also set these options globally using \code{\link[koRpus:set.kRp.env]{set.kRp.env}},
@@ -138,43 +115,32 @@ If you use the \code{treetagger} setting from kRp.env and it's set to \code{TT.c
 \code{treetag} will treat \code{TT.options=NULL} like \code{TT.options="kRp.env"} 
 automatically.}
 
-\item{debug}{Logical. Especially in cases where the presets wouldn't work as expected,
-      this switch can be used to examine the values \code{treetag}
+\item{debug}{Logical. Especially in cases where the presets wouldn't work as expected, this switch can be used to examine the values \code{treetag}
 is assuming.}
 
-\item{TT.tknz}{Logical,
-      if \code{FALSE} TreeTagger's tokenzier script will be replaced by \code{koRpus}' function \code{\link[koRpus:tokenize]{tokenize}}.
-To accomplish this,
-      its results will be written to a temporal file which is automatically deleted afterwards (if \code{debug=FALSE}). Note that
+\item{TT.tknz}{Logical, if \code{FALSE} TreeTagger's tokenzier script will be replaced by \code{koRpus}' function \code{\link[koRpus:tokenize]{tokenize}}.
+To accomplish this, its results will be written to a temporal file which is automatically deleted afterwards (if \code{debug=FALSE}). Note that
 this option only has an effect if \code{treetagger="manual"}.}
 
-\item{format}{Either "file" or "obj",
-      depending on whether you want to scan files or analyze the text in a given object, like
-a character vector. If the latter,
-      it will be written to a temporary file (see \code{file}).}
+\item{format}{Either "file" or "obj", depending on whether you want to scan files or analyze the text in a given object, like
+a character vector. If the latter, it will be written to a temporary file (see \code{file}).}
 
 \item{stopwords}{A character vector to be used for stopword detection. Comparison is done in lower case. You can also simply set 
 \code{stopwords=tm::stopwords("en")} to use the english stopwords provided by the \code{tm} package.}
 
-\item{stemmer}{A function or method to perform stemming. For instance,
-      you can set \code{SnowballC::wordStem} if you have
-the \code{SnowballC} package installed. As of now,
-      you cannot provide further arguments to this function.}
+\item{stemmer}{A function or method to perform stemming. For instance, you can set \code{SnowballC::wordStem} if you have
+the \code{SnowballC} package installed. As of now, you cannot provide further arguments to this function.}
 
-\item{doc_id}{Character string,
-      optional identifier of the particular document. Will be added to the \code{desc} slot, and as a factor to the \code{"doc_id"} column
-of the \code{tokens} slot. If \code{NA},
-      the document name will be used (for \code{format="obj"} a random name).}
+\item{doc_id}{Character string, optional identifier of the particular document. Will be added to the \code{desc} slot, and as a factor to the \code{"doc_id"} column
+of the \code{tokens} slot. If \code{NA}, the document name will be used (for \code{format="obj"} a random name).}
 
-\item{add.desc}{Logical. If \code{TRUE},
-      the tag description (column \code{"desc"} of the data.frame) will be added directly
+\item{add.desc}{Logical. If \code{TRUE}, the tag description (column \code{"desc"} of the data.frame) will be added directly
 to the resulting object. If set to \code{"kRp.env"} this is fetched from \code{\link[koRpus:get.kRp.env]{get.kRp.env}}.}
 
 \item{...}{Only used for the method generic.}
 }
 \value{
-An object of class \code{\link[koRpus:kRp.text-class]{kRp.text}}. If \code{debug=TRUE},
-      prints internal variable settings and attempts to return the
+An object of class \code{\link[koRpus:kRp.text-class]{kRp.text}}. If \code{debug=TRUE}, prints internal variable settings and attempts to return the
    original output if the TreeTagger system call in a matrix.
 }
 \description{
@@ -183,10 +149,8 @@ This method calls a local installation of TreeTagger[1] to tokenize and POS tag 
 \details{
 Note that the value of \code{lang} must match a valid language supported by \code{\link[koRpus:kRp.POS.tags]{kRp.POS.tags}}.
 It will also get stored in the resulting object and might be used by other functions at a later point.
-E.g., \code{treetag} is being called by \code{\link[koRpus:freq.analysis]{freq.analysis}},
-      which
-will by default query this language definition,
-      unless explicitly told otherwise. The rationale behind this
+E.g., \code{treetag} is being called by \code{\link[koRpus:freq.analysis]{freq.analysis}}, which
+will by default query this language definition, unless explicitly told otherwise. The rationale behind this
 is to comfortably make it possible to have tokenized and POS tagged objects of various languages around
 in your workspace, and not worry about that too much.
 }
@@ -250,19 +214,16 @@ tagged.noStopWords <- filterByClass(
 }
 \references{
 Schmid, H. (1994). Probabilistic part-of-speec tagging using decision trees. In
-   \emph{International Conference on New Methods in Language Processing}, Manchester, UK,
-      44--49.
+   \emph{International Conference on New Methods in Language Processing}, Manchester, UK, 44--49.
 
 [1] \url{https://www.cis.lmu.de/~schmid/tools/TreeTagger/}
 }
 \seealso{
-\code{\link[koRpus:freq.analysis]{freq.analysis}},
-      \code{\link[koRpus:get.kRp.env]{get.kRp.env}},
+\code{\link[koRpus:freq.analysis]{freq.analysis}}, \code{\link[koRpus:get.kRp.env]{get.kRp.env}},
 \code{\link[koRpus:kRp.text-class]{kRp.text}}
 }
 \author{
-m.eik michalke \email{meik.michalke@hhu.de},
-      support for various laguages was contributed by Earl Brown (Spanish), Alberto Mirisola (Italian) and
+m.eik michalke \email{meik.michalke@hhu.de}, support for various laguages was contributed by Earl Brown (Spanish), Alberto Mirisola (Italian) and
    Alexandre Brulet (French).
 }
 \keyword{misc}

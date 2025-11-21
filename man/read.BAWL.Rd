@@ -15,15 +15,12 @@ read.BAWL(csv, fileEncoding = NULL)
 An object of class \code{\link[koRpus:kRp.corp.freq-class]{kRp.corp.freq}}.
 }
 \description{
-Read the Berlin Affective Word List -- Reloaded (V\"o, Conrad, Kuchinke, Hartfeld,
-      Hofmann & Jacobs, 2009; [1]) into a valid object of class
+Read the Berlin Affective Word List -- Reloaded (V\"o, Conrad, Kuchinke, Hartfeld, Hofmann & Jacobs, 2009; [1]) into a valid object of class
 \code{\link[koRpus:kRp.corp.freq-class]{kRp.corp.freq}}.
 }
 \details{
-To use this function,
-      you must first export the BAWL-R list into CSV format: Use comma for decimal values and semicolon as value separator
-(often referred to as CSV2). Once you have successfully imported the word list,
-      you can use the object to perform frequency analysis.
+To use this function, you must first export the BAWL-R list into CSV format: Use comma for decimal values and semicolon as value separator
+(often referred to as CSV2). Once you have successfully imported the word list, you can use the object to perform frequency analysis.
 }
 \examples{
 \dontrun{
@@ -43,10 +40,8 @@ bawl.stimulus <- query(bawl.corp,
 }
 }
 \references{
-V\"o, M. L.-H., Conrad, M., Kuchinke, L., Hartfeld, K., Hofmann, M.F. & Jacobs,
-      A.M. (2009).
-  The Berlin Affective Word List Reloaded (BAWL-R). \emph{Behavior Research Methods},
-      41(2), 534--538.
+V\"o, M. L.-H., Conrad, M., Kuchinke, L., Hartfeld, K., Hofmann, M.F. & Jacobs, A.M. (2009).
+  The Berlin Affective Word List Reloaded (BAWL-R). \emph{Behavior Research Methods}, 41(2), 534--538.
   doi: 10.3758/BRM.41.2.534
 
 [1] \url{https://www.ewi-psy.fu-berlin.de/einrichtungen/arbeitsbereiche/allgpsy/Download/BAWL/index.html}

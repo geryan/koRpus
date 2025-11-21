@@ -61,14 +61,12 @@ tokens(txt, ...)
 
 \item{...}{Only used for the method generic.}
 
-\item{stats}{Logical,
-      whether statistics on the length in characters and frequency of types in the text should also be returned.}
+\item{stats}{Logical, whether statistics on the length in characters and frequency of types in the text should also be returned.}
 
 \item{case.sens}{Logical, whether types should be counted case sensitive.
 This option is available for tagged text and character input only.}
 
-\item{lemmatize}{Logical,
-      whether analysis should be carried out on the lemmatized tokens rather than all running word forms.
+\item{lemmatize}{Logical, whether analysis should be carried out on the lemmatized tokens rather than all running word forms.
 This option is available for tagged text and character input only.}
 
 \item{corp.rm.class}{A character vector with word classes which should be dropped. The default value
@@ -79,27 +77,20 @@ This option is available for tagged text and character input only.}
 \item{corp.rm.tag}{A character vector with POS tags which should be dropped.
 This option is available for tagged text and character input only.}
 
-\item{lang}{Set the language of a text,
-      see the \code{force.lang} option of \code{\link[koRpus:lex.div]{lex.div}}.
+\item{lang}{Set the language of a text, see the \code{force.lang} option of \code{\link[koRpus:lex.div]{lex.div}}.
 This option is available for character input only.}
 }
 \value{
-A character vector. For\code{types} and \code{stats=TRUE} a data.frame containing all types,
-      their length (characters)
-   and frequency. The \code{types} result is always sorted by frequency,
-      with more frequent types coming first.
+A character vector. For\code{types} and \code{stats=TRUE} a data.frame containing all types, their length (characters)
+   and frequency. The \code{types} result is always sorted by frequency, with more frequent types coming first.
 }
 \description{
-These methods return character vectors that return all types or tokens of a given text,
-      where text can either be a character
-vector itself, a previosly tokenized/tagged koRpus object,
-      or an object of class \code{kRp.TTR}.
+These methods return character vectors that return all types or tokens of a given text, where text can either be a character
+vector itself, a previosly tokenized/tagged koRpus object, or an object of class \code{kRp.TTR}.
 }
 \note{
-If the input is of class \code{kRp.TTR},
-      the result will only be useful if \code{lex.div} or
-the respective wrapper function was called with \code{keep.tokens=TRUE}. Similarily,
-      \code{lemmatize} can only work
+If the input is of class \code{kRp.TTR}, the result will only be useful if \code{lex.div} or
+the respective wrapper function was called with \code{keep.tokens=TRUE}. Similarily, \code{lemmatize} can only work
 properly if the input is a tagged text object with lemmata or you've properly set up the enviroment via \code{set.kRp.env}.
 Calling these methods on \code{kRp.TTR} objects is just returning the respective part of its \code{tt} slot.
 }

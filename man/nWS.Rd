@@ -16,17 +16,13 @@ nWS(
 )
 }
 \arguments{
-\item{txt.file}{Either an object of class \code{\link[koRpus:kRp.text-class]{kRp.text}},
-      a character vector which must be be
-a valid path to a file containing the text to be analyzed,
-      or a list of text features. If the latter, calculation
+\item{txt.file}{Either an object of class \code{\link[koRpus:kRp.text-class]{kRp.text}}, a character vector which must be be
+a valid path to a file containing the text to be analyzed, or a list of text features. If the latter, calculation
 is done by \code{\link[koRpus:readability.num]{readability.num}}.}
 
-\item{hyphen}{An object of class kRp.hyphen. If \code{NULL},
-      the text will be hyphenated automatically.}
+\item{hyphen}{An object of class kRp.hyphen. If \code{NULL}, the text will be hyphenated automatically.}
 
-\item{parameters}{A numeric vector with named magic numbers,
-      defining the relevant parameters for all formulas of the index.}
+\item{parameters}{A numeric vector with named magic numbers, defining the relevant parameters for all formulas of the index.}
 
 \item{nws1}{A numeric vector with named magic numbers for the first of the formulas.}
 
@@ -36,8 +32,7 @@ is done by \code{\link[koRpus:readability.num]{readability.num}}.}
 
 \item{nws4}{A numeric vector with named magic numbers for the fourth of the formulas.}
 
-\item{...}{Further valid options for the main function,
-      see \code{\link[koRpus:readability]{readability}} for details.}
+\item{...}{Further valid options for the main function, see \code{\link[koRpus:readability]{readability}} for details.}
 }
 \value{
 An object of class \code{\link[koRpus:kRp.readability-class]{kRp.readability}}.
@@ -47,8 +42,7 @@ This is just a convenient wrapper function for \code{\link[koRpus:readability]{r
 }
 \details{
 This function calculates the new Wiener Sachtextformeln (formulas 1 to 4). In contrast to \code{\link[koRpus:readability]{readability}},
-which by default calculates all possible indices,
-      this function will only calculate the index values.
+which by default calculates all possible indices, this function will only calculate the index values.
 }
 \examples{
 \dontrun{
@@ -56,7 +50,6 @@ nWS(tagged.text)
 }
 }
 \references{
-Bamberger, R. & Vanecek,
-      E. (1984). \emph{Lesen--Verstehen--Lernen--Schreiben}. Wien: Jugend und Volk.
+Bamberger, R. & Vanecek, E. (1984). \emph{Lesen--Verstehen--Lernen--Schreiben}. Wien: Jugend und Volk.
 }
 \keyword{readability}

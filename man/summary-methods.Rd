@@ -27,20 +27,16 @@ summary(object, ...)
 
 \item{...}{Further options, depending on the object class.}
 
-\item{flat}{Logical, if \code{TRUE} and \code{feature="lex_div"} or \code{"readability"},
-      a named vector of main
-results is returned. For objects containig more than one \code{doc_id},
-      defaults to \code{TRUE} automatically and
+\item{flat}{Logical, if \code{TRUE} and \code{feature="lex_div"} or \code{"readability"}, a named vector of main
+results is returned. For objects containig more than one \code{doc_id}, defaults to \code{TRUE} automatically and
 returns a data frame with named rows.}
 
 \item{index}{Either a vector indicating which rows should be considered as transformed for the statistics,
-or the name of a particular transformation that was previously done to the object,
-      if more than one transformation was applied.
+or the name of a particular transformation that was previously done to the object, if more than one transformation was applied.
 If \code{NA}, all rows where \code{"equal"} is \code{FALSE} are used.
 Only valid for objects providing a \code{diff} feature.}
 
-\item{feature}{A character string naming a feature present in the object,
-      to trigger a summary regarding that feature.
+\item{feature}{A character string naming a feature present in the object, to trigger a summary regarding that feature.
 Currently only \code{"freq"}, \code{"lex_div"}, and \code{"readability"} are implemented.}
 }
 \description{

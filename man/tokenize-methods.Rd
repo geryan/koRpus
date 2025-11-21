@@ -14,7 +14,7 @@ tokenize(
   split = "[[:space:]]",
   ign.comp = "-",
   heuristics = "abbr",
-  heur.fix = list(pre = c("\u2019", "'"), suf = c("\u2019", "'")),
+  heur.fix = list(pre = c("’", "'"), suf = c("’", "'")),
   abbrev = NULL,
   tag = TRUE,
   lang = "kRp.env",
@@ -36,7 +36,7 @@ tokenize(
   split = "[[:space:]]",
   ign.comp = "-",
   heuristics = "abbr",
-  heur.fix = list(pre = c("\u2019", "'"), suf = c("\u2019", "'")),
+  heur.fix = list(pre = c("’", "'"), suf = c("’", "'")),
   abbrev = NULL,
   tag = TRUE,
   lang = "kRp.env",
@@ -57,7 +57,7 @@ tokenize(
   split = "[[:space:]]",
   ign.comp = "-",
   heuristics = "abbr",
-  heur.fix = list(pre = c("\u2019", "'"), suf = c("\u2019", "'")),
+  heur.fix = list(pre = c("’", "'"), suf = c("’", "'")),
   abbrev = NULL,
   tag = TRUE,
   lang = "kRp.env",
@@ -72,12 +72,10 @@ tokenize(
 )
 }
 \arguments{
-\item{txt}{Either an open connection,
-      the path to directory with txt files to read and tokenize, or a vector object
+\item{txt}{Either an open connection, the path to directory with txt files to read and tokenize, or a vector object
 already holding the text corpus.}
 
-\item{format}{Either "file" or "obj",
-      depending on whether you want to scan files or analyze the given object.
+\item{format}{Either "file" or "obj", depending on whether you want to scan files or analyze the given object.
 Ignored if \code{txt} is a connection.}
 
 \item{fileEncoding}{A character string naming the encoding of all files.}
@@ -88,90 +86,68 @@ for languages that don't separate words by space.}
 \item{ign.comp}{A character vector defining punctuation which might be used in composita that should 
 not be split.}
 
-\item{heuristics}{A vector to indicate if the tokenizer should use some heuristics. Can be none,
-      one or several of the following:
+\item{heuristics}{A vector to indicate if the tokenizer should use some heuristics. Can be none, one or several of the following:
 \itemize{
   \item{\code{"abbr"}}{Assume that "letter-dot-letter-dot" combinations are abbreviations and leave them intact.}
-  \item{\code{"suf"}}{Try to detect possesive suffixes like "'s",
-      or shorting suffixes like "'ll" and treat them as one token}
+  \item{\code{"suf"}}{Try to detect possesive suffixes like "'s", or shorting suffixes like "'ll" and treat them as one token}
   \item{\code{"pre"}}{Try to detect prefixes like "s'" or "l'" and treat them as one token}
 }
-Earlier releases used the names \code{"en"} and \code{"fr"} instead of \code{"suf"} and \code{"pre"}. They are still working,
-      that is
-\code{"en"} is equivalent to \code{"suf"},
-      whereas \code{"fr"} is now equivalent to both \code{"suf"} and \code{"pre"} (and not only
+Earlier releases used the names \code{"en"} and \code{"fr"} instead of \code{"suf"} and \code{"pre"}. They are still working, that is
+\code{"en"} is equivalent to \code{"suf"}, whereas \code{"fr"} is now equivalent to both \code{"suf"} and \code{"pre"} (and not only
 \code{"pre"} as in the past, which was missing the use of suffixes in French).}
 
 \item{heur.fix}{A list with the named vectors \code{pre} and \code{suf}. These will be used if \code{heuristics} were
 set to use one of the presets that try to detect pre- and/or suffixes. Change them if you document uses other
 characters than the ones defined by default.}
 
-\item{abbrev}{Path to a text file with abbreviations to take care of,
-      one per line. Note that
+\item{abbrev}{Path to a text file with abbreviations to take care of, one per line. Note that
 this file must have the same encoding as defined by \code{fileEncoding}.}
 
-\item{tag}{Logical. If \code{TRUE},
-      the text will be rudimentarily tagged and returned as an object
+\item{tag}{Logical. If \code{TRUE}, the text will be rudimentarily tagged and returned as an object
 of class \code{kRp.text}.}
 
 \item{lang}{A character string naming the language of the analyzed text. If set to \code{"kRp.env"} this is fetched from \code{\link[koRpus:get.kRp.env]{get.kRp.env}}. Only needed if \code{tag=TRUE}.}
 
 \item{sentc.end}{A character vector with tokens indicating a sentence ending. Only needed if \code{tag=TRUE}.}
 
-\item{detect}{A named logical vector,
-      indicating by the setting of \code{parag} and \code{hline} whether \code{tokenize} should try
+\item{detect}{A named logical vector, indicating by the setting of \code{parag} and \code{hline} whether \code{tokenize} should try
 to detect paragraphs and headlines.}
 
-\item{clean.raw}{A named list of character values,
-      indicating replacements that should globally be made to the text prior to tokenizing it.
-This is applied after the text was converted into UTF-8 internally. In the list,
-      the name of each element represents a pattern which
-is replaced by its value if met in the text. Since this is done by calling \code{\link[base:gsub]{gsub}},
-      regular expressions are basically
+\item{clean.raw}{A named list of character values, indicating replacements that should globally be made to the text prior to tokenizing it.
+This is applied after the text was converted into UTF-8 internally. In the list, the name of each element represents a pattern which
+is replaced by its value if met in the text. Since this is done by calling \code{\link[base:gsub]{gsub}}, regular expressions are basically
 supported. See the \code{perl} attribute, too.}
 
-\item{perl}{Logical,
-      only relevant if \code{clean.raw} is not \code{NULL}. If \code{perl=TRUE}, this is forwarded to \code{\link[base:gsub]{gsub}}
+\item{perl}{Logical, only relevant if \code{clean.raw} is not \code{NULL}. If \code{perl=TRUE}, this is forwarded to \code{\link[base:gsub]{gsub}}
 to allow for perl-like regular expressions in \code{clean.raw}.}
 
 \item{stopwords}{A character vector to be used for stopword detection. Comparison is done in lower case. You can also simply set 
 \code{stopwords=tm::stopwords("en")} to use the english stopwords provided by the \code{tm} package.}
 
-\item{stemmer}{A function or method to perform stemming. For instance,
-      you can set \code{SnowballC::wordStem} if you have
-the \code{SnowballC} package installed. As of now,
-      you cannot provide further arguments to this function.}
+\item{stemmer}{A function or method to perform stemming. For instance, you can set \code{SnowballC::wordStem} if you have
+the \code{SnowballC} package installed. As of now, you cannot provide further arguments to this function.}
 
-\item{doc_id}{Character string,
-      optional identifier of the particular document. Will be added to the \code{desc} slot, and as a factor to the \code{"doc_id"} column
-of the \code{tokens} slot. If \code{NA},
-      the document name will be used (for \code{format="obj"} a random name).}
+\item{doc_id}{Character string, optional identifier of the particular document. Will be added to the \code{desc} slot, and as a factor to the \code{"doc_id"} column
+of the \code{tokens} slot. If \code{NA}, the document name will be used (for \code{format="obj"} a random name).}
 
-\item{add.desc}{Logical. If \code{TRUE},
-      the tag description (column \code{"desc"} of the data.frame) will be added directly
+\item{add.desc}{Logical. If \code{TRUE}, the tag description (column \code{"desc"} of the data.frame) will be added directly
 to the resulting object. If set to \code{"kRp.env"} this is fetched from \code{\link[koRpus:get.kRp.env]{get.kRp.env}}. Only needed if \code{tag=TRUE}.}
 
 \item{...}{Only used for the method generic.}
 }
 \value{
-If \code{tag=FALSE}, a character vector with the tokenized text. If \code{tag=TRUE},
-      returns an object of class \code{\link[koRpus:kRp.text-class]{kRp.text}}.
+If \code{tag=FALSE}, a character vector with the tokenized text. If \code{tag=TRUE}, returns an object of class \code{\link[koRpus:kRp.text-class]{kRp.text}}.
 }
 \description{
-This tokenizer can be used to try replace TreeTagger. Its results are not as detailed when it comes to word classes,
-      and no
+This tokenizer can be used to try replace TreeTagger. Its results are not as detailed when it comes to word classes, and no
 lemmatization is done. However, for most cases this should suffice.
 }
 \details{
 \code{tokenize} can try to guess what's a headline and where a paragraph was inserted (via the \code{detect} parameter).
-A headline is assumed if a line of text without sentence ending punctuation is found,
-      a paragraph if two blocks of text
-are separated by space. This will add extra tags into the text: "<kRp.h>" (headline starts),
-      "</kRp.h>" (headline ends)
-and "<kRp.p/>" (paragraph),
-      respectively. This can be useful in two cases: "</kRp.h>" will be treated like a sentence ending,
-which gives you more control for automatic analyses. And adding to that,
-      \code{\link[koRpus:pasteText]{pasteText}}
+A headline is assumed if a line of text without sentence ending punctuation is found, a paragraph if two blocks of text
+are separated by space. This will add extra tags into the text: "<kRp.h>" (headline starts), "</kRp.h>" (headline ends)
+and "<kRp.p/>" (paragraph), respectively. This can be useful in two cases: "</kRp.h>" will be treated like a sentence ending,
+which gives you more control for automatic analyses. And adding to that, \code{\link[koRpus:pasteText]{pasteText}}
 can replace these tags, which probably preserves more of the original layout.
 }
 \examples{

@@ -7,15 +7,12 @@
 set.lang.support(target, value, merge = TRUE)
 }
 \arguments{
-\item{target}{One of "kRp.POS.tags", "treetag", or "hyphen",
-      depending on what support is to be added.}
+\item{target}{One of "kRp.POS.tags", "treetag", or "hyphen", depending on what support is to be added.}
 
 \item{value}{A named list that upholds exactly the structure defined here for its respective \code{target}.}
 
-\item{merge}{Logical,
-      only relevant for the "kRp.POS.tags" target. This argument controls whether \code{value}
-will completely replace an already present tagset definition,
-      or merge all given tags (i.e., replace 
+\item{merge}{Logical, only relevant for the "kRp.POS.tags" target. This argument controls whether \code{value}
+will completely replace an already present tagset definition, or merge all given tags (i.e., replace 
 single tags with an updated definition or add new tags).}
 }
 \description{
@@ -25,14 +22,11 @@ You can use this function to add new languages to be used with \code{koRpus}.
 Language support in this package is designed to be extended easily. You could call it modular,
 although it's actually more "environemntal", but nevermind.
 
-To add full new language support, say for Xyzedish,
-      you basically have to call this function
+To add full new language support, say for Xyzedish, you basically have to call this function
 three times (or at least twice, see hyphen section below) with different targets.
-If you would like to re-use this language support,
-      you should consider making it a package.
+If you would like to re-use this language support, you should consider making it a package.
 
-Be it a package or a script,
-      it should contain all three calls to this function. If it succeeds,
+Be it a package or a script, it should contain all three calls to this function. If it succeeds,
 it will fill an internal environment with the information you have defined.
 
 The function \code{set.language.support()} gets called three times because there's three
@@ -46,16 +40,13 @@ functions of koRpus that need language support:
       you must provide also)
 }
 
-All the calls follow the same pattern -- first,
-      you name one of the three targets explained above,
-and second,
-      you provide a named list as the \code{value} for the respective \code{target} function.
+All the calls follow the same pattern -- first, you name one of the three targets explained above,
+and second, you provide a named list as the \code{value} for the respective \code{target} function.
 }
 \section{"treetag"}{
 
 
-The presets for the treetag() function are basically what the shell (GNU/Linux,
-      MacOS) and batch
+The presets for the treetag() function are basically what the shell (GNU/Linux, MacOS) and batch
 (Win) scripts define that come with TreeTagger. Look for scripts called
 "$TREETAGGER/cmd/tree-tagger-xyzedish" and "$TREETAGGER\\cmd\\tree-tagger-xyzedish.bat",
 figure out which call resembles which call and then define them in set.lang.support("treetag")
@@ -68,21 +59,16 @@ example.
 \section{"kRp.POS.tags"}{
 
 
-If Xyzedish is supported by TreeTagger,
-      you should find a tagset definition for the language on its
-homepage. treetag() needs to know \emph{all} POS tags that TreeTagger might return,
-      otherwise you
+If Xyzedish is supported by TreeTagger, you should find a tagset definition for the language on its
+homepage. treetag() needs to know \emph{all} POS tags that TreeTagger might return, otherwise you
 will get a self-explaining error message as soon as an unknown tag appears. Notice that this can
 still happen after you implemented the full documented tag set: sometimes the contributed TreeTagger
-parameter files added their own tags, e.g.,
-      for special punctuation. So please test your tag set well.
+parameter files added their own tags, e.g., for special punctuation. So please test your tag set well.
 
-As you can see in the template file,
-      you will also have to add a global word class and an explaination
+As you can see in the template file, you will also have to add a global word class and an explaination
 for each tag. The former is especially important for further steps like frequency analysis.
 
-Again,
-      please have a look at the commented template and/or existing language support files in the
+Again, please have a look at the commented template and/or existing language support files in the
 package sources, most of it should be almost self-explaining.
 }
 
@@ -96,10 +82,8 @@ See the documentation of its \code{\link[sylly:set.hyph.support]{set.hyph.suppor
 \section{Packaging}{
 
 
-If you would like to create a proper language support package,
-      you should only include the "treetag" and
-"kRp.POS.tags" calls,
-      and the hyphenation patterns should be loaded as a dependency to a package called
+If you would like to create a proper language support package, you should only include the "treetag" and
+"kRp.POS.tags" calls, and the hyphenation patterns should be loaded as a dependency to a package called
 \code{sylly.xx}. You can generate such a sylly package rather quickly by using the private function
 \code{sylly:::sylly_langpack()}.
 }
